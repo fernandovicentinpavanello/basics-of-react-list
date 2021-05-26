@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>React Todo</h1>
+        <h2>React Todo</h2>
         <TodoForm addTodo={addTodo} />
         <TodoList todos={todos} />
       </header>

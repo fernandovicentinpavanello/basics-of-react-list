@@ -4,7 +4,14 @@ function Todo({ todo }) {
   return (
     <div style={{ display: 'flex' }}>
       <input type="checkbox" />
-      <li>{todo.taks}</li>
+      <li
+        style={{
+          color: 'white',
+          textDecoration: todo.completed ? 'line-through' : null,
+        }}
+      >
+        {todo.taks}
+      </li>
       <button>X</button>
     </div>
   );
