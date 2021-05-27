@@ -1,6 +1,6 @@
 import React from 'react';
 
-function TodoList({ todos }) {
+function TodoList({ todos, toggleComplete }) {
   return (
     <ul>
       {todos.map((todo) => (
