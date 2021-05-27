@@ -1,6 +1,8 @@
+import { Checkbox, IconButton, ListItem, Typography } from '@material-ui/core';
+import CloseIcon from '@material-ui/icons/Close';
 import React from 'react';
 
-function Todo({ todo, toggleComplete }) {
+function Todo({ todo, toggleComplete, removeTodo }) {
   function handleCheckboxClick() {
     toggleComplete(todo.id);
   }
@@ -10,18 +12,20 @@ function Todo({ todo, toggleComplete }) {
   }
 
   return (
-    <div style={{ display: 'flex' }}>
-      <input type="checkbox" onClick={handleCheckboxClick} />
-      <li
+    <ListItem style={{ display: 'flex' }}>
+      <Checkbox checked={todo.completed} onClick={handleCheckboxClick} />
+      <Typography
+        variant="body1"
         style={{
-          color: 'white',
           textDecoration: todo.completed ? 'line-through' : null,
         }}
       >
-        {todo.taks}
-      </li>
-      <button onClick={handleCheckboxClick}>X</button>
-    </div>
+        {todo.task}
+      </Typography>
+      <IconButton onClick={handleRemoveClick}>
+        <CloseIcon />
+      </IconButton>
+    </ListItem>
   );
 }
 
