@@ -37,12 +37,20 @@ function App() {
     );
   }
 
+  function removeTodo(id) {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  }
+
   return (
     <div className="App">
       <header className="App-header">
         <h2>React Todo</h2>
         <TodoForm addTodo={addTodo} />
-        <TodoList todos={todos} toggleComplete={toggleComplete} />
+        <TodoList
+          todos={todos}
+          toggleComplete={toggleComplete}
+          removeTodo={removeTodo}
+        />
       </header>
     </div>
   );
